@@ -4,7 +4,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import { useMsal } from "@azure/msal-react";
 import { loginRequest } from "../../authConfig";
 function handleLogin(instance) {
-    instance.loginPopup(loginRequest).catch(e => {
+    instance.loginRedirect(loginRequest).catch(e => {
         console.error(e);
     });
 }
