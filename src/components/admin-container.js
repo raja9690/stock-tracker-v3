@@ -5,7 +5,7 @@ import FormApiUrl from './forms/api-url'
 import FormEndPoint from './forms/end-point'
 import FormAction from './forms/action'
 import FormHeader from './forms/header'
-import FormSymbol from './forms/symbol'
+import FormParams from './forms/params'
 
 const Admin = props => {
 
@@ -20,11 +20,10 @@ const Admin = props => {
             <FormApiUrl />
             <FormEndPoint />
             <FormAction />
-            <FormHeader />
-            <FormSymbol />
           </div>
           <div className='review-submit-panel'>
             <FormHeader />
+            <FormParams />
             <Button variant="contained" endIcon={<SendIcon />}>
               Send
             </Button>

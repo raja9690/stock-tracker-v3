@@ -6,11 +6,11 @@ export default function UseFormControl() {
     return (
         <TextField
             id="outlined-multiline-static"
-            label="Headers"
+            label="Params"
             multiline
             rows={4}
             sx={{ width: 300 }}
-            defaultValue="Required Headers"
+            defaultValue="Required Params"
         />
     );
 }
