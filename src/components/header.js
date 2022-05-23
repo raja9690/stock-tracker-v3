@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import InsightsIcon from '@mui/icons-material/Insights';
+import { useIsAuthenticated } from "@azure/msal-react";
 
 const settings = ['Logout'];
 
@@ -19,12 +20,13 @@ const ResponsiveAppBar = props => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [menuClicked, setMenuClicked] = React.useState(false);
-
+  const isAuthenticated = useIsAuthenticated();
   const handleOpenNavMenu = (event) => {
     console.log(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
     console.log(event.currentTarget);
+    setAnchorElNav(event.currentTarget);
   };
 
   const handleCloseNavMenu = (event) => {
@@ -44,7 +46,7 @@ const ResponsiveAppBar = props => {
     alert(event.currentTarget);
   };
 
-  const activeClassName = menuClicked ? 'menu-avtive' : 'menu-inactive';
+  const activeClassName = menuClicked ? 'menu-active' : 'menu-inactive';
 
   return (
     <AppBar position="static">
@@ -135,7 +137,7 @@ const ResponsiveAppBar = props => {
               </Button>
             ))}
           </Box>
-
+          {isAuthenticated && (
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -165,6 +167,8 @@ const ResponsiveAppBar = props => {
               ))}
             </Menu>
           </Box>
+          )
+              }
         </Toolbar>
       </Container>
     </AppBar>
