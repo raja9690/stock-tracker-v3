@@ -2,7 +2,7 @@ export const msalConfig = {
     auth: {
       clientId: "72480fd5-12fb-4357-8fdd-4c8d0e378bb9",
       authority: "https://login.microsoftonline.com/f5ed7255-38c4-4862-966f-ad4a32cc989d", // This is a URL (e.g. https://login.microsoftonline.com/{your tenant ID})
-      redirectUri: "https://newstocktracker.netlify.app/admin/config",
+      redirectUri: "https://newstocktracker.netlify.app/admin/config/",
     },
     cache: {
       cacheLocation: "sessionStorage", // This configures where your cache will be stored
