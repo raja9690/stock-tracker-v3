@@ -4,7 +4,7 @@ const q = faunadb.query;
 exports.handler = async (event, context) => {
 
   const client = new faunadb.Client({
-    secret: "fnAEnxdLqqACS3-EXY0EzdG-arbTxBFoBSXGJ1vU"
+    secret: process.env.FAUNA_SERVER_SECRET
   })
   console.log(event);
   const data = JSON.parse(event.body)
