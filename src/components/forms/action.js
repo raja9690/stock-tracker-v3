@@ -2,19 +2,38 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
-export default function ComboBox() {
+const apiActions = [
+  { action: 'GET', label: 'Get' },
+  { action: 'POST', label: 'Post' }
+]
+
+const ApiAction = props => {
+
+  const [apiAction, setApiAction] = React.useState('');
+
+  const inputOnchange = (event, inputType, value) => {
+    console.log(apiAction);
+    if (event && inputType && value) {
+      setApiAction(value);
+      props.onEventHandler(inputType, value);
+    }
+  }
+
   return (
     <Autocomplete
       disablePortal
-      id="combo-box-demo"
-      options={symbols}
-      sx={{ width: 300 }}
+      id="action"
+      options={apiActions}
+      onChange={(event, newValue) => {
+        inputOnchange(event, 'action', newValue);
+      }}
       renderInput={(params) => <TextField {...params} label="Action" />}
     />
   );
 }
 
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
+export default ApiAction
+
 const symbols = [
   { label: 'GET' },
   { label: 'POST' }

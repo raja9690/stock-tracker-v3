@@ -2,15 +2,19 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 
 
-export default function UseFormControl() {
+const ApiHeader = props => {
+
     return (
         <TextField
-            id="outlined-multiline-static"
-            label="Headers"
+            id="apiHeader"
+            label="Configured"
+            disabled
             multiline
-            rows={4}
-            sx={{ width: 300 }}
-            defaultValue="Required Headers"
+            value={JSON.stringify(props.headerData, null, 4)}
+            rows={15}
+            sx={{ width: 500 }}
         />
     );
 }
+
+export default ApiHeader

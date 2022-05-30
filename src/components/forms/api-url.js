@@ -2,19 +2,40 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
-export default function ComboBox() {
+const urlList = [
+  {
+    url: 'https://yahoofinance-stocks1.p.rapidapi.com',
+    label: 'Yahoo Finance Stocks',
+    headers: {
+      'X-RapidAPI-Host': 'yahoofinance-stocks1.p.rapidapi.com',
+      'X-RapidAPI-Key': '27d642a60dmshf8dc8bcd7c87d63p16d60cjsnbd98e7c79e57'
+    }
+  }
+]
+
+const ApiConfig = props => {
+
+  const [apiUrl, setApiUrl] = React.useState('');
+
+  const inputOnchange = (event, inputType, value) => {
+    console.log(apiUrl);
+    if (event && inputType && value) {
+      setApiUrl(value);
+      props.onEventHandler(inputType, apiUrl);
+    }
+  }
+
   return (
     <Autocomplete
       disablePortal
-      id="combo-box-demo"
-      options={apisource}
-      sx={{ width: 300 }}
+      id="apiUrl"
+      options={urlList}
+      onChange={(event, newValue) => {
+        inputOnchange(event, 'apiUrl', newValue);
+      }}
       renderInput={(params) => <TextField {...params} label="API URL" />}
     />
-  );
+  )
 }
 
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-const apisource = [
-  { label: 'rapidapi.com' }
-];
+export default ApiConfig

@@ -4,8 +4,8 @@ const Footer = props => {
 
   return (
     <footer>
-      <p class="footer-text">
-        <span class="small p-half text-normal">
+      <p className="footer-text">
+        <span className="small p-half text-normal">
           ©2022 Cognizant, all rights reserved
         </span>
       </p>

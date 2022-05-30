@@ -1,0 +1,28 @@
+
+type AdminApiConfig {
+  headerHostKey: [StrLabel]
+  headerHost: [StrLabel]
+  params: [Params]
+  apiSource: [StrLabel]
+  endPoint: [StrLabel]
+  action: [StrLabel]
+}
+
+type StrLabel {
+  label: String!
+}
+
+type Params {
+  divident: [Divident]
+}
+
+type Divident {
+  label: String!
+}
+
+type Query {
+  AdminApiConfig: [AdminApiConfig!]!
+}
+
+# Types with identical fields:
+# HeaderHostKey HeaderHost Divident ApiSource EndPoint Action
