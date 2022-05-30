@@ -6,7 +6,7 @@ require('dotenv').config();
 
 exports.handler = async (event, context) => {
   const client = new faunadb.Client({
-    secret: process.env.FAUNA_SERVER_SECRET,
+    secret: process.env.FAUNA_SERVER_SECRET
   })
   return client
     .query(q.Paginate(q.Match(q.Ref('indexes/apiconfigs'))))

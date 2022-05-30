@@ -5,7 +5,7 @@ require('dotenv').config();
 exports.handler = async (event, context) => {
 
   const client = new faunadb.Client({
-    secret: "process.env.FAUNA_SERVER_SECRET"
+    secret: process.env.FAUNA_SERVER_SECRET
   })
   console.log(event);
   const data = JSON.parse(event.body)
