@@ -4,7 +4,7 @@ const q = faunadb.query;
 
 exports.handler = async (event, context) => {
   const client = new faunadb.Client({
-    secret: process.env.FAUNA_SERVER_SECRET
+    secret: "fnAEnxdLqqACS3-EXY0EzdG-arbTxBFoBSXGJ1vU"
   })
   return client
     .query(q.Paginate(q.Match(q.Ref('indexes/apiconfigs'))))
