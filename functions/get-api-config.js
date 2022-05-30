@@ -1,6 +1,7 @@
 /* Import faunaDB sdk */
 const faunadb = require('faunadb')
-const q = faunadb.query
+const q = faunadb.query;
+require('dotenv').config();
 
 
 exports.handler = async (event, context) => {
