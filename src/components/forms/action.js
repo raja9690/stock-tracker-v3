@@ -33,8 +33,3 @@ const ApiAction = props => {
 }
 
 export default ApiAction
-
-const symbols = [
-  { label: 'GET' },
-  { label: 'POST' }
-];

@@ -21,12 +21,17 @@ const ResponsiveAppBar = props => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [menuClicked, setMenuClicked] = React.useState(false);
   const isAuthenticated = useIsAuthenticated();
+
   const handleOpenNavMenu = (event) => {
-    console.log(event.currentTarget);
+    setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
-    console.log(event.currentTarget);
-    setAnchorElNav(event.currentTarget);
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+    window.location.assign('/');
   };
 
   const handleCloseNavMenu = (event) => {
@@ -40,10 +45,6 @@ const ResponsiveAppBar = props => {
     } else if (event.currentTarget.innerText === 'FAVOURITES') {
       window.location.assign('/analyst/favourites');
     }
-  };
-
-  const handleCloseUserMenu = (event) => {
-    alert(event.currentTarget);
   };
 
   const activeClassName = menuClicked ? 'menu-active' : 'menu-inactive';
@@ -137,13 +138,11 @@ const ResponsiveAppBar = props => {
               </Button>
             ))}
           </Box>
-          {props.pages && isAuthenticated === true ?
+          {props.pages.length !== 0 ?
             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              </IconButton>
               <Menu
                 sx={{ mt: '45px' }}
                 id="menu-appbar"

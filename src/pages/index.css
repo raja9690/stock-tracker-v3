@@ -116,6 +116,25 @@ footer {
     margin: 20px 0;
 }
 
+td.MuiTableCell-root {
+    border-bottom: none;
+}
+
+td.MuiTableCell-root span {
+    display: block;
+    text-align: left;
+}
+
+tr.MuiTableRow-root:nth-child(even) {background-color: #f2f2f2;}
+
+tr.MuiTableRow-head {
+    background-color: #696969;
+}
+
+tr.MuiTableRow-head th {
+    color: #fff;
+}
+
 /*Responsive*/
 @media only screen and (max-width: 767px) {
     .admin-panel {

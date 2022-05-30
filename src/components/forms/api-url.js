@@ -21,7 +21,7 @@ const ApiConfig = props => {
     console.log(apiUrl);
     if (event && inputType && value) {
       setApiUrl(value);
-      props.onEventHandler(inputType, apiUrl);
+      props.onEventHandler(inputType, value);
     }
   }
 

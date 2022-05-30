@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 const post = (data) => {
-    return axios.post('/.functions/api-config', {
+    return axios.post('/.netlify/functions/post-api-config', {
         body: JSON.stringify(data)
     }).then(response => {
         return response
@@ -10,7 +10,7 @@ const post = (data) => {
 }
 
 const get = async (functionName) => {
-    return axios.get('/.functions/' + functionName).then(response => {
+    return axios.get('/.netlify/functions/' + functionName).then(response => {
         return response
     })
 }
