@@ -62,7 +62,7 @@ const CustomizedTables = () => {
                       </TableCell>
                   ))}
                   <TableCell align="left">
-                  <Button variant="contained" onClick={submitConfigApi}>
+                  <Button disabled variant="contained" onClick={submitConfigApi}>
                     Trigger
                   </Button>
                   </TableCell>

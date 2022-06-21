@@ -6,6 +6,7 @@ const ApiHeader = props => {
 
     return (
         <TextField
+            required
             id="apiHeader"
             label="Configured"
             disabled

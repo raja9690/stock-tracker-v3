@@ -33,7 +33,7 @@ const ApiConfig = props => {
       onChange={(event, newValue) => {
         inputOnchange(event, 'apiUrl', newValue);
       }}
-      renderInput={(params) => <TextField {...params} label="API URL" />}
+      renderInput={(params) => <TextField required {...params} label="API URL" />}
     />
   )
 }

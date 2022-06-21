@@ -27,7 +27,7 @@ const EndPoint = props => {
       onChange={(event, newValue) => {
         inputOnchange(event, 'endPoint', newValue);
       }}
-      renderInput={(params) => <TextField {...params} label="end-points" />}
+      renderInput={(params) => <TextField required {...params} label="end-points" />}
     />
   );
 }

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { DataGrid } from '@mui/x-data-grid';
-import api from '../../functions/get-analyst-data'
 
 const columns = [
     { field: 'symbol', headerName: 'SYMBOL', width: 150 },
@@ -12,13 +11,7 @@ const columns = [
 
 export default function DataTable() {
     const removeRow = () => alert("Added to Fav list");
-    const [tableData, setTableData] = useState([])
-    useEffect(() => {
-        api.readAll()
-            .then((data) => data[0].data.results)
-            .then((data) => setTableData(data))
-
-    }, []);
+    const [tableData, setTableData] = useState([]);
     return (
         <div className="analyst-body-container">
             <div className='analyst-panel'>

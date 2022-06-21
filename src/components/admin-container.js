@@ -5,12 +5,14 @@ import FormEndPoint from './forms/end-point'
 import FormAction from './forms/action'
 import FormHeader from './forms/header'
 import FormParams from './forms/params'
+import FormSymbol from './forms/symbol'
 import FormAlert from './forms/alert'
 import service from "../api/invoke-function-service"
 
 const defaultPayload = {
   method: '',
   url: '',
+  endPoint: '',
   headers: {},
   params: {}
 };
@@ -30,10 +32,13 @@ const AdminCofig = props => {
           inputPayload.headers = inputData.headers;
           break;
         case 'endPoint':
-          inputPayload.url = inputData.endPoint;
+          inputPayload.endPoint = inputData.endPoint;
           break;
         case 'action':
           inputPayload.method = inputData.action;
+          break;
+        case 'symbol':
+          inputPayload.params.Symbol = inputData.symbol
           break;
         case 'startDate':
           inputPayload.params.StartDateInclusive = formatData(inputData)
@@ -52,6 +57,7 @@ const AdminCofig = props => {
   }
 
   const submitConfig = () => {
+    delete apiConfigPayload.endPoint;
     if (apiConfigPayload.url === "") {
       setApiConfigStatus('incorrect');
     }
@@ -78,6 +84,7 @@ const AdminCofig = props => {
             <FormAction onEventHandler = {handleCallback} />
             <FormApiUrl onEventHandler = {handleCallback} />
             <FormEndPoint onEventHandler = {handleCallback} />
+            <FormSymbol onEventHandler = {handleCallback} />
             <FormParams onEventHandler = {handleCallback} />
           </div>
           <div className='review-submit-panel'>

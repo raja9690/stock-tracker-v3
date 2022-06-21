@@ -20,3 +20,4 @@ export async function getDataFromRapidAPI(options) {
         return inError
     }
 }
+

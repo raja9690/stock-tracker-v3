@@ -135,6 +135,26 @@ tr.MuiTableRow-head th {
     color: #fff;
 }
 
+header .MuiTypography-h6 {
+    color: #fff;
+    width: 250px;
+}
+
+header .MuiButton-textPrimary {
+    background: #efefef;
+    color: #0e0e0e !important;
+}
+
+header .MuiButton-textPrimary:hover {
+    background-color: #373737;
+    color: #fff !important;
+}
+
+.analyst-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /*Responsive*/
 @media only screen and (max-width: 767px) {
     .admin-panel {

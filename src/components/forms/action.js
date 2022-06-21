@@ -27,7 +27,7 @@ const ApiAction = props => {
       onChange={(event, newValue) => {
         inputOnchange(event, 'action', newValue);
       }}
-      renderInput={(params) => <TextField {...params} label="Action" />}
+      renderInput={(params) => <TextField required {...params} label="Action" />}
     />
   );
 }
