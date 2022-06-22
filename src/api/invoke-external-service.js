@@ -11,7 +11,7 @@ export async function invokeHelloFunction() {
     }
 }
 
-export async function getDataFromRapidAPI(options) {
+export async function getRapidAPIData(options) {
     try {
         return await axios.request(options);
     }

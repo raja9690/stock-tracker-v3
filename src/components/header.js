@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import InsightsIcon from '@mui/icons-material/Insights';
 import { useIsAuthenticated } from "@azure/msal-react";
@@ -21,6 +20,7 @@ const ResponsiveAppBar = props => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [menuClicked, setMenuClicked] = React.useState(false);
   const isAuthenticated = useIsAuthenticated();
+  console.log(isAuthenticated);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
